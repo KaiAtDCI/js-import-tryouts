@@ -1,0 +1,27 @@
+<!--
+    Source: https://humanwhocodes.com/blog/2009/07/28/the-best-way-to-load-external-javascript/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>index.html</title>
+    </head>
+
+    <!-- No access to library.js from body's onload-event -->
+    <body onload="console.log('onload (index.html)');">
+        <input type="button"
+        value="Link to 'target.html'"
+        onclick="window.location.href = 'target.html'">
+    </body>
+
+    <!-- embed scriptLoader -->
+    <script type="text/javascript" src="../scripts/scriptLoader.js"></script>
+    <script>
+        <!-- load script / set initializer function -->
+        scriptLoader("../scripts/library.js", function() {
+            console.log('inititialize (index.html)');
+        });
+    </script>
+</html>

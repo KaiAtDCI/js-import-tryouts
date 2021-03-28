@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>target.html</title>
+    </head>
+
+    <!-- No access to library.js from body's onload-event -->
+    <body>
+        <input type="button"
+               value="Say Hello"
+               onclick="say('Hello');">
+    </body>
+
+    <!-- embed scriptLoader -->
+    <script type="text/javascript" src="../scripts/scriptLoader.js"></script>
+    <script>
+        <!-- load script / set initializer function -->
+        scriptLoader("../scripts/library.js", function() {
+            console.log('inititialize (target.html)');
+        });
+    </script>
+
+</html>
