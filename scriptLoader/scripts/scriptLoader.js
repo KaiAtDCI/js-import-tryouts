@@ -1,3 +1,5 @@
+// Source: https://humanwhocodes.com/blog/2009/07/28/the-best-way-to-load-external-javascript/
+
 function scriptLoader(url, callback) {
 
     var script = document.createElement("script")
